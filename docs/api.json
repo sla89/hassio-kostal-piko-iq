@@ -1,0 +1,88 @@
+[
+    {
+        "moduleid": "devices:local",
+        "processdata": [
+            {
+                "Comment": "PV-Generator",
+                "id": "Dc_P",
+                "unit": "",
+                "value": 219.391418457
+            }
+        ]
+    },
+    {
+        "moduleid": "devices:local:ac",
+        "processdata": [
+            {
+                "comment": "Netzfrequenz",
+                "id": "Frequency",
+                "unit": "",
+                "value": 49.9877929688
+            },
+            {
+                "comment": "Leistung Wechselrichter",
+                "id": "P",
+                "unit": "Watt",
+                "value": 203.9232940674
+            },
+            {
+                "id": "Q",
+                "unit": "",
+                "value": 299.6244506836
+            },
+            {
+                "id": "S",
+                "unit": "",
+                "value": 362.435546875
+            },
+            {
+                "comment": "Phase 1 Strom",
+                "id": "L1_I",
+                "unit": "Ampere",
+                "value": 0.496419251
+            },
+            {
+                "comment": "Phase 1 Leistung",
+                "id": "L1_P",
+                "unit": "Watt",
+                "value": 72.6813659668
+            },
+            {
+                "comment": "Phase 1 Spannung",
+                "id": "L1_U",
+                "unit": "Volt",
+                "value": 236.1354217529
+            },
+            {
+                "id": "L2_I",
+                "unit": "",
+                "value": 0.4943847358
+            },
+            {
+                "id": "L2_P",
+                "unit": "",
+                "value": 59.2361297607
+            },
+            {
+                "id": "L2_U",
+                "unit": "",
+                "value": 235.7124938965
+            },
+            {
+                "id": "L3_I",
+                "unit": "",
+                "value": 0.5320230722
+            },
+            {
+                "id": "L3_P",
+                "unit": "",
+                "value": 72.0058059692
+            },
+            {
+                "id": "L3_U",
+                "unit": "",
+                "value": 232.1528320312
+            }
+        ]
+    }
+]

@@ -1,0 +1,10 @@
+  {
+    "domain": "kostal_piko_iq",
+    "name": "Kostal PIKO IQ Solar Inverter",
+    "documentation": "https://github.com/sla89/hassio-kostal-piko-iq",
+    "issue_tracker": "https://github.com/sla89/hassio-kostal-piko-iq",
+    "requirements": ["pycryptodome"],
+    "codeowners": ["sla89"],
+    "version": "1.00",
+    "iot_class": "local_polling"
+  }
