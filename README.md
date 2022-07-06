@@ -18,6 +18,12 @@ This integration integrated and has modified some parts of the [Kostal Plenticor
 
 According to my knowledge the Kostal Plenticore API differs from the Kostal Plenticore Plus / PIKO IQ REST API. That is why I have written this integration. It should work for both PIKO IQ and Plenticore Plus inverters but not for Plenticore inverters.
 
+## Compatibility
+Tested with
+|Type|UI version|MC version|IOC version|HW version|
+|-|-|-|-|-|
+|PIKO IQ 4.2|01.11.03557|01.35|01.34|0100|
+
 ## Installation
 ### HACS
 Not yet supported
