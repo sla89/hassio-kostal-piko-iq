@@ -28,7 +28,7 @@ PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend({
 _LOGGER = logging.getLogger(__name__)
 
 
-def setup_platform(hass, config, async_add_entities, discovery_info=None):
+def setup_platform(hass, config, add_entities, discovery_info=None):
     """Set up the Kostal Piko IQ Inverter platform."""
     host = config[CONF_HOST]
     password = config[CONF_PASSWORD]
@@ -47,7 +47,7 @@ def setup_platform(hass, config, async_add_entities, discovery_info=None):
         sensors.append(
             KostalSensor(client=client, description=description))
 
-    async_add_entities(sensors)
+    add_entities(sensors)
 
 
 class KostalSensor(SensorEntity):
@@ -56,12 +56,18 @@ class KostalSensor(SensorEntity):
     def __init__(self, client: KostalRestClient, description: KostalSensorEntityDescription):
         """Initialize the sensor."""
         self.entity_description = description.description
-
         self.client = client
-        self._module_id = description.module_id
-        self._value_id = description.value_id
+
+        self.entry_id = description.description.key
+        self.module_id = description.module_id
+        self.value_id = description.value_id
 
         self.update()
+
+    @property
+    def unique_id(self) -> str:
+        """Return the unique id of this Sensor Entity."""
+        return f"{self.entry_id}_{self.module_id}_{self.value_id}"
 
     @Throttle(MIN_TIME_BETWEEN_UPDATES)
     def update(self):
@@ -80,7 +86,7 @@ class KostalSensor(SensorEntity):
     def getData(self):
         """Get sensor data from inverter."""
         value = self.client.getProcessdata(
-            self._module_id, [self._value_id])
+            self.module_id, [self.value_id])
 
         if not value:
             raise Exception(
@@ -91,5 +97,3 @@ class KostalSensor(SensorEntity):
             return round(float(value / 1000), 2)
         else:
             return round(float(value), 2)
-
-
