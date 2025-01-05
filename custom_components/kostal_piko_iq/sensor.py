@@ -9,7 +9,7 @@ from dataclasses import dataclass
 import homeassistant.helpers.config_validation as cv
 from homeassistant.components.sensor import (SensorEntity, PLATFORM_SCHEMA)
 
-from homeassistant.const import (CONF_HOST, CONF_PASSWORD, ENERGY_KILO_WATT_HOUR)
+from homeassistant.const import (CONF_HOST, CONF_PASSWORD, UnitOfEnergy)
 from homeassistant.util import Throttle
 
 from .const import (
@@ -93,7 +93,7 @@ class KostalSensor(SensorEntity):
                 f"Error during updating sensor {self.entity_description.name}")
 
         value = value[0]["value"]
-        if self.entity_description.native_unit_of_measurement == ENERGY_KILO_WATT_HOUR:
+        if self.entity_description.native_unit_of_measurement == UnitOfEnergy.KILO_WATT_HOUR:
             return round(float(value / 1000), 2)
         else:
             return round(float(value), 2)
