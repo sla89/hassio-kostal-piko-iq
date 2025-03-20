@@ -2,7 +2,7 @@ from homeassistant.components.sensor import (SensorDeviceClass,
                                              SensorEntityDescription,
                                              SensorStateClass)
 
-from homeassistant.const import (UnitOfEnergy, UnitOfMass)
+from homeassistant.const import (UnitOfEnergy, UnitOfMass,UnitOfPower)
 
 class KostalSensorEntityDescription():
     """A class that describes Kostal entities."""
@@ -22,9 +22,9 @@ SENSOR_DESCRIPTIONS: tuple[KostalSensorEntityDescription, ...] = (
         description=SensorEntityDescription(
             key="kostal_generator",
             name="Kostal Generator",
-            device_class=SensorDeviceClass.ENERGY,
+            device_class=SensorDeviceClass.POWER,
             state_class=SensorStateClass.MEASUREMENT,
-            native_unit_of_measurement=UnitOfEnergy.KILO_WATT_HOUR,
+            native_unit_of_measurement=UnitOfPower.KILO_WATT,
             icon="mdi:solar-panel"
         ),
         module_id="devices:local",
@@ -34,9 +34,9 @@ SENSOR_DESCRIPTIONS: tuple[KostalSensorEntityDescription, ...] = (
         description=SensorEntityDescription(
             key="kostal_inverter",
             name="Kostal Inverter",
-            device_class=SensorDeviceClass.ENERGY,
+            device_class=SensorDeviceClass.POWER,
             state_class=SensorStateClass.MEASUREMENT,
-            native_unit_of_measurement=UnitOfEnergy.KILO_WATT_HOUR,
+            native_unit_of_measurement=UnitOfPower.KILO_WATT,
             icon="mdi:solar-power"
         ),
         module_id="devices:local:ac",
