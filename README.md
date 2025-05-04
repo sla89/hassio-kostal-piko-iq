@@ -34,18 +34,9 @@ Not yet supported
 1. If you do not have a `custom_components` folder there, you need to create it.
 1. Copy the content of the `custom_components` folder of the downloaded archive into your HA `custom_components` folder.
 1. Restart Home Assistant
-1. Add to the sensor list in your `configuration.yaml` file (or where ever you specify sensors):
-    ```yaml
-    # Example configuration.yaml entry
-    sensor:
-      - platform: kostal_piko_iq
-        host: IP_OF_YOUR_INVERTER
-        password: YOUR_PASSWORT
-    ```
-
-    > **Note:** Please ensure to read the [Home Assistant Secrets handling documentation](https://www.home-assistant.io/docs/configuration/secrets/) carefully and follow its instructions. It is at least recommended to use a `secrets.yaml` file.
-1. Ensure that your configuration is valid
-1. Restart Home Assistant
+1. Go to Settings -> Integrations -> Add Integration
+1. Search for Kostal and select `Kostal PIKO IQ Solar Inverter`
+1. Enter IP and password of your inverter
 
 # Disclaimer
 The code within this repository comes with no guarantee, the use of this code is your responsibility.
